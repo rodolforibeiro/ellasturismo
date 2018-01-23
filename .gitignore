@@ -37,3 +37,6 @@ Design
 
 .passenger
 .vagrant
+
+#Database configuration
+config/database.yml

@@ -10,7 +10,7 @@ db_drivers = {
 }
 
 ## gem db_drivers[ENV['CI'] && ENV['DB']] || 'pg'
-gem 'mysql2'
+gem 'mysql2', '~> 0.3.18'
 # Removes a gem dependency
 def remove(name)
   @dependencies.reject! { |d| d.name == name }
