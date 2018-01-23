@@ -1,7 +1,7 @@
 root = "/var/www/ellascrm/current"
 working_directory root
 
-pid "/tmp/pids/unicorn.pid"
+pid "/var/www/ellascrm/shared/pids/unicorn.pid"
 
 stderr_path "/log/unicorn.log"
 stdout_path "/log/unicorn.log"

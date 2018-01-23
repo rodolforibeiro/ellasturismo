@@ -3,7 +3,7 @@
 # Defines a single server with a list of roles and multiple properties.
 # You can define all roles on a single server, or split them:
 
-server "138.197.102.39", user: "root", roles: %w{app db web}, ssh_options: { forward_agent: true }
+server "138.197.102.39", user: "deploy", roles: %w{app db web}, ssh_options: { forward_agent: true }
 # server "example.com", user: "deploy", roles: %w{app web}, other_property: :other_value
 # server "db.example.com", user: "deploy", roles: %w{db}
 
