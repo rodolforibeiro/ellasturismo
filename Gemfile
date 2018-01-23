@@ -9,6 +9,9 @@ db_drivers = {
   "sqlite" => "sqlite3"
 }
 
+gem 'unicorn'
+gem 'capistrano3-unicorn'
+
 ## gem db_drivers[ENV['CI'] && ENV['DB']] || 'pg'
 gem 'mysql2', '~> 0.3.18'
 # Removes a gem dependency
