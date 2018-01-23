@@ -3,8 +3,8 @@ working_directory root
 
 pid "/var/www/ellascrm/shared/pids/unicorn.pid"
 
-stderr_path "/log/unicorn.log"
-stdout_path "/log/unicorn.log"
+stderr_path "/var/www/ellascrm//log/unicorn.log"
+stdout_path "/var/www/ellascrm//log/unicorn.log"
 
 worker_processes 4
 timeout 30
