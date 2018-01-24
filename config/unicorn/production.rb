@@ -10,4 +10,4 @@ worker_processes 4
 timeout 30
 preload_app true
 
-listen '/tmp/ellascrm.sock', backlog: 64
+listen '/var/www/ellascrm/shared/tmp/unicorn.sock', backlog: 64
