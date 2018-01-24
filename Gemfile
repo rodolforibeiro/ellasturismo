@@ -11,6 +11,7 @@ db_drivers = {
 
 gem 'unicorn'
 gem 'capistrano3-unicorn'
+gem "passenger"
 
 ## gem db_drivers[ENV['CI'] && ENV['DB']] || 'pg'
 gem 'mysql2', '~> 0.3.18'
