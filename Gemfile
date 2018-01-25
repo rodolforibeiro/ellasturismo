@@ -9,7 +9,7 @@ db_drivers = {
   "sqlite" => "sqlite3"
 }
 
-gem 'unicorn'
+gem 'unicorn', '~> 5.1'
 gem 'capistrano3-unicorn'
 gem "passenger"
 

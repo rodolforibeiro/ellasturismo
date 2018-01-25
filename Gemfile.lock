@@ -480,7 +480,7 @@ DEPENDENCIES
   timecop
   tzinfo-data
   uglifier
-  unicorn
+  unicorn (~> 5.1)
   will_paginate
   zeus
 
