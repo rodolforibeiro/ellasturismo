@@ -9,9 +9,9 @@ db_drivers = {
   "sqlite" => "sqlite3"
 }
 
-gem 'unicorn', '~> 5.1'
-gem 'capistrano3-unicorn'
-gem "passenger"
+#gem 'unicorn', '~> 5.1'
+gem 'capistrano3-puma'
+
 
 ## gem db_drivers[ENV['CI'] && ENV['DB']] || 'pg'
 gem 'mysql2', '~> 0.3.18'
