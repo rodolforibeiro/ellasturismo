@@ -11,7 +11,7 @@ db_drivers = {
 
 #gem 'unicorn', '~> 5.1'
 gem 'capistrano3-puma'
-
+gem 'msgpack', '~> 1.2', '>= 1.2.2'
 
 ## gem db_drivers[ENV['CI'] && ENV['DB']] || 'pg'
 gem 'mysql2', '~> 0.3.18'
