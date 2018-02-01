@@ -5,42 +5,41 @@ source 'https://rubygems.org'
 
 # Uncomment the database that you have configured in config/database.yml
 # ----------------------------------------------------------------------
-db_drivers = {
-  "mysql" => "mysql2",
-  "sqlite" => "sqlite3"
-}
+#db_drivers = {
+#  "mysql" => "mysql2",
+#  "sqlite" => "sqlite3"
+#}
 
 #gem 'unicorn', '~> 5.1'
 gem 'capistrano3-puma'
-gem 'msgpack', '~> 1.2', '>= 1.2.2'
-gem 'activesupport', '~> 5.1', '>= 5.1.3'
+
 
 ## gem db_drivers[ENV['CI'] && ENV['DB']] || 'pg'
 gem 'mysql2', '~> 0.3.18'
 # Removes a gem dependency
-def remove(name)
-  @dependencies.reject! { |d| d.name == name }
-end
+#def remove(name)
+#  @dependencies.reject! { |d| d.name == name }
+#end
 
 # Replaces an existing gem dependency (e.g. from gemspec) with an alternate source.
-def gem(name, *args)
-  remove(name)
-  super
-end
+#def gem(name, *args)
+#  remove(name)
+#  super
+#end
 
 # Bundler no longer treats runtime dependencies as base dependencies.
 # The following code restores this behaviour.
 # (See https://github.com/carlhuda/bundler/issues/1041)
-spec = Bundler.load_gemspec(File.expand_path("../fat_free_crm.gemspec", __FILE__))
-spec.runtime_dependencies.each do |dep|
-  gem dep.name, *dep.requirement.as_list
-end
+#spec = Bundler.load_gemspec(File.expand_path("../fat_free_crm.gemspec", __FILE__))
+#spec.runtime_dependencies.each do |dep|
+#  gem dep.name, *dep.requirement.as_list
+#end
 
 # Remove premailer auto-require
 gem 'premailer', require: false
 
 # Remove fat_free_crm dependency, to stop it from being auto-required too early.
-remove 'fat_free_crm'
+#remove 'fat_free_crm'
 
 group :development do
   # don't load these gems in travis
