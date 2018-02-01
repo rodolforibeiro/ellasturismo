@@ -2,6 +2,7 @@
 
 source 'https://rubygems.org'
 
+
 # Uncomment the database that you have configured in config/database.yml
 # ----------------------------------------------------------------------
 db_drivers = {
@@ -12,6 +13,7 @@ db_drivers = {
 #gem 'unicorn', '~> 5.1'
 gem 'capistrano3-puma'
 gem 'msgpack', '~> 1.2', '>= 1.2.2'
+gem 'activesupport', '~> 5.1', '>= 5.1.3'
 
 ## gem db_drivers[ENV['CI'] && ENV['DB']] || 'pg'
 gem 'mysql2', '~> 0.3.18'
@@ -58,7 +60,7 @@ group :development do
 end
 
 group :development, :test do
-  gem 'rails-controller-testing'
+  # gem 'rails-controller-testing'
   gem 'rspec-rails'
   gem 'rspec-activemodel-mocks'
   gem 'headless'
@@ -89,6 +91,6 @@ gem 'uglifier'
 gem 'execjs'
 gem 'therubyracer', platform: :ruby unless ENV["CI"]
 gem 'nokogiri', '>= 1.8.1'
-gem 'activemodel-serializers-xml'
+# gem 'activemodel-serializers-xml'
 gem 'bootsnap', require: false
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
