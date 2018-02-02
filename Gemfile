@@ -11,29 +11,29 @@ source 'https://rubygems.org'
 #}
 
 #gem 'unicorn', '~> 5.1'
-gem 'capistrano3-puma'
+# gem 'capistrano3-puma'
 
 
 ## gem db_drivers[ENV['CI'] && ENV['DB']] || 'pg'
 gem 'mysql2', '~> 0.3.18'
 # Removes a gem dependency
-#def remove(name)
-#  @dependencies.reject! { |d| d.name == name }
-#end
+def remove(name)
+  @dependencies.reject! { |d| d.name == name }
+end
 
 # Replaces an existing gem dependency (e.g. from gemspec) with an alternate source.
-#def gem(name, *args)
-#  remove(name)
-#  super
-#end
+def gem(name, *args)
+  remove(name)
+  super
+end
 
 # Bundler no longer treats runtime dependencies as base dependencies.
 # The following code restores this behaviour.
 # (See https://github.com/carlhuda/bundler/issues/1041)
-#spec = Bundler.load_gemspec(File.expand_path("../fat_free_crm.gemspec", __FILE__))
-#spec.runtime_dependencies.each do |dep|
-#  gem dep.name, *dep.requirement.as_list
-#end
+spec = Bundler.load_gemspec(File.expand_path("../fat_free_crm.gemspec", __FILE__))
+spec.runtime_dependencies.each do |dep|
+  gem dep.name, *dep.requirement.as_list
+end
 
 # Remove premailer auto-require
 gem 'premailer', require: false
@@ -44,7 +44,7 @@ gem 'premailer', require: false
 group :development do
   # don't load these gems in travis
   unless ENV["CI"]
-    gem 'puma'
+   # gem 'puma'
     gem 'capistrano'
     gem 'capistrano-bundler'
     gem 'capistrano-rails'
@@ -60,8 +60,8 @@ end
 
 group :development, :test do
   # gem 'rails-controller-testing'
-  gem 'rspec-rails'
-  gem 'rspec-activemodel-mocks'
+  #gem 'rspec-rails'
+  # gem 'rspec-activemodel-mocks'
   gem 'headless'
   gem 'byebug'
   gem 'pry-rails' unless ENV["CI"]
